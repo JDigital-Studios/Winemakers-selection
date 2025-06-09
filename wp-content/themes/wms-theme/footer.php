@@ -17,5 +17,7 @@
 			</footer>
 		</div> <!-- end .off-canvas-wrapper -->
 		<?php wp_footer(); ?>
+
+		<script src="https://cdn.userway.org/widget.js" data-account="OQBfWXhU5x"></script>
 	</body>
 </html> <!-- end page -->
