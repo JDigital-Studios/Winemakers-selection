@@ -165,6 +165,13 @@ p, ul li, ol li, td {
 	font-weight: 400;
 	line-height: 34px;
 }
+
+table {
+	td, th {
+		padding: 10px;
+	}
+}
+
 a {
 	color: $black;
 	transition: all 0.2s ease-out;

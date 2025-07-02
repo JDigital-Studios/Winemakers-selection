@@ -8862,6 +8862,10 @@ p, ul li, ol li, td {
   line-height: 34px;
 }
 
+table td, table th {
+  padding: 10px;
+}
+
 a {
   color: #020202;
   transition: all 0.2s ease-out;
