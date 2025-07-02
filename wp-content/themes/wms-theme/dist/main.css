@@ -8866,6 +8866,11 @@ table td, table th {
   padding: 10px;
 }
 
+.content-block p a, .content-block td a, .content-block li a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 a {
   color: #020202;
   transition: all 0.2s ease-out;

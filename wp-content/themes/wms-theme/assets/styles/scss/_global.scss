@@ -172,6 +172,13 @@ table {
 	}
 }
 
+.content-block {
+	p a, td a, li a {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+}
+
 a {
 	color: $black;
 	transition: all 0.2s ease-out;
