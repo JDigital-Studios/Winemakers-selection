@@ -2,7 +2,7 @@ name: CI-Deploy-to-WP-Engine
 
 on:
   push:
-    branches: [ prod ]
+    branches: [ dev ]
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Update WP Engine remote
         run: |
-          git remote set-url origin "git@git.wpengine.com:winemakerssele.git"
+          git remote set-url origin "git@git.wpengine.com:winemakerssstg.git"
 
       - name: Push to WP Engine
         env:
@@ -34,4 +34,4 @@ jobs:
           ssh-add key.pem
           mkdir -p ~/.ssh
           echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
-          git push origin prod:master --force
+          git push origin dev:master --force
