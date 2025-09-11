@@ -20,40 +20,37 @@
       border-radius: 0;
       font-family: neutrabook;
       font-weight: 400;
+      font-size: 18px;
       color: #000000;
       border-color: #000000;
     }
 
     .gchoice {
-      .gfield-choice-input {
-        background: #000000;
-      }
-
       &::before {
-        display: none !important;
+        background-color: #000000;
       }
     }
 
     .gform_button.button {
-      background: $black;
-      border: 1px solid $black;
-      border-radius: 0;
+      background: $black !important;
+      border: 1px solid $black !important;
+      border-radius: 0 !important;
       color: $white;
-      font-family: "aktiv-grotesk-extended", sans-serif;
-      font-weight: 700;
+      font-family: "aktiv-grotesk-extended", sans-serif !important;
+      font-weight: 700 !important;
       font-style: normal;
-      font-size: 15px;
-      letter-spacing: 2.25px;
-      padding: 16px 20px;
-      text-transform: uppercase;
+      font-size: 15px !important;
+      letter-spacing: 2.25px !important;
+      padding: 16px 20px !important;
+      text-transform: uppercase !important;
       transition: .25s ease-in-out !important;
 
       &:hover,
       &:focus,
       &:active {
-        background: $white;
-        border: 1px solid $black;
-        color: $black;
+        background: $white !important;
+        border: 1px solid $black !important;
+        color: $black !important;
         transition: .25s ease-in-out !important;
       }
     }
