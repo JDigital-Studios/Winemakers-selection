@@ -4,12 +4,17 @@
   form {
 
     .gfield_label,
-    .gform-field-label {
+    .gform-field-label,
+    .gsection_title {
       color: #000000;
       font-family: "aktiv-grotesk-extended", sans-serif;
       font-weight: 700;
       font-style: normal;
       letter-spacing: 2.25px;
+    }
+
+    gsection_title {
+      margin-top: 20px;
     }
 
     input[type="text"],
@@ -27,7 +32,7 @@
 
     .gchoice {
       &::before {
-        background-color: #000000;
+        background-color: #000000 !important;
       }
     }
 
