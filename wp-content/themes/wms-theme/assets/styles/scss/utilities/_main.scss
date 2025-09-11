@@ -1,73 +1,102 @@
+.contact,
+.ccpa-request {
+  .modules .content-block#content-block-0 {
+    height: auto !important;
+  }
+}
+
 .modules {
-    @import "../modules/feature_slider";
-    @import "../modules/content_block";
-	@import "../modules/content_split_left";
-	@import "../modules/content_split_right";
-    @import "../modules/content_wine_slider";
+  @import "../modules/feature_slider";
+  @import "../modules/content_block";
+  @import "../modules/content_split_left";
+  @import "../modules/content_split_right";
+  @import "../modules/content_wine_slider";
 }
+
 .padding {
-    padding: 5rem 0;
+  padding: 5rem 0;
 }
+
 .padding-small {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
+
 .padding-large {
-    padding: 5rem 0;
+  padding: 5rem 0;
 }
+
 .no-padding {
-    padding: 0 !important;
+  padding: 0 !important;
 }
+
 .text-center {
-    text-align: center;
+  text-align: center;
 }
+
 .uppercase {
-    text-transform: uppercase !important;
+  text-transform: uppercase !important;
 }
+
 .clear {
-    clear: both;
+  clear: both;
 }
+
 .white {
-    color: $white;
+  color: $white;
 }
+
 .black {
-    color: $black !important;
+  color: $black !important;
 }
+
 .brut {
-    color: $brut !important;
+  color: $brut !important;
 }
+
 .cabernet {
-    color: $cabernet !important;
+  color: $cabernet !important;
 }
+
 .chardonnay {
-    color: $chardonnay !important;
+  color: $chardonnay !important;
 }
+
 .pinotnoir {
-    color: $pinotnoir !important;
+  color: $pinotnoir !important;
 }
+
 .redblend {
-    color: $redblend !important;
+  color: $redblend !important;
 }
+
 .sauvignonblanc {
-    color: $sauvignonblanc !important;
+  color: $sauvignonblanc !important;
 }
+
 .res-prosecco {
-    color: $res-prosecco !important;
+  color: $res-prosecco !important;
 }
+
 .res-cabernet {
-    color: $res-cabernet !important;
+  color: $res-cabernet !important;
 }
+
 .res-chardonnay {
-    color: $res-chardonnay !important;
+  color: $res-chardonnay !important;
 }
+
 .res-pinotnoir {
-    color: $res-pinotnoir !important;
+  color: $res-pinotnoir !important;
 }
+
 .res-pinotgrigio {
-    color: $res-pinotgrigio !important;
+  color: $res-pinotgrigio !important;
 }
+
 .res-redblend {
-    color: $res-redblend !important;
+  color: $res-redblend !important;
 }
+
 .res-sauvignonblanc {
-    color: $res-sauvignonblanc !important;
+  color: $res-sauvignonblanc !important;
 }
