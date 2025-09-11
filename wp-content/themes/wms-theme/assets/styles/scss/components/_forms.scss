@@ -1,19 +1,35 @@
 .forms-container {
-  --gf-local-radius: 0;
-  --gf-local-border-color: #000;
-  --gf-local-color: #000;
-}
-
-.forms-container {
   padding: 40px;
 
   form {
-    .gfield_label {
+
+    .gfield_label,
+    .gfield-field-label {
       color: #000000;
       font-family: "aktiv-grotesk-extended", sans-serif;
       font-weight: 700;
       font-style: normal;
       letter-spacing: 2.25px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    .gform-datepicker,
+    .gfield_select,
+    textarea {
+      border-radius: 0;
+      font-family: neutrabook;
+      font-weight: 400;
+      color: #000000;
+      border-color: #000000;
+    }
+
+    .gchoice {
+      background: #000000;
+
+      &::before {
+        display: none !important;
+      }
     }
   }
 }

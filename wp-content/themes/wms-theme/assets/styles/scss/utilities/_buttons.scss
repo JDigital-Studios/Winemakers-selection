@@ -1,22 +1,24 @@
-.btn {
-    background: $black;
+.btn,
+.gform_button {
+  background: $black;
+  border: 1px solid $black;
+  border-radius: 0;
+  color: $white;
+  font-family: "aktiv-grotesk-extended", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15px;
+  letter-spacing: 2.25px;
+  padding: 16px 20px;
+  text-transform: uppercase;
+  transition: .25s ease-in-out !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $white;
     border: 1px solid $black;
-    border-radius: 0;
-    color: $white;
-    font-family: "aktiv-grotesk-extended", sans-serif;
-	font-weight: 700;
-	font-style: normal;
-    font-size: 15px;
-    letter-spacing: 2.25px;
-    padding: 16px 20px;
-    text-transform: uppercase;
+    color: $black;
     transition: .25s ease-in-out !important;
-    &:hover,
-    &:focus,
-    &:active {
-        background: $white;
-        border: 1px solid $black;
-        color: $black;
-        transition: .25s ease-in-out !important;
-    }
+  }
 }
