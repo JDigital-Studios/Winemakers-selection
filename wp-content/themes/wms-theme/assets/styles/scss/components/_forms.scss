@@ -31,7 +31,7 @@
     }
 
     .gchoice {
-      &::before {
+      .gfield-choice-input::before {
         background-color: #000000 !important;
       }
     }
