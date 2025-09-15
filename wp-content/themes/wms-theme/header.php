@@ -95,6 +95,15 @@
             });  
         });
 </script>
+
+	<script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6Lfc8sYrAAAAAG-TYNoe5xfsAlTX_mlzCRpqjJAx', {action: 'LOGIN'});
+    });
+  }
+</script>
 </head>
 <body <?php body_class(); ?>>
     <div class="off-canvas-wrapper">
