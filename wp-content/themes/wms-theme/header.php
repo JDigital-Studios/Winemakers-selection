@@ -17,7 +17,7 @@
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
 	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-icon-touch-icon" />	
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <link rel="stylesheet" href="https://use.typekit.net/oxb5jsw.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fhg5slu.css">
 
     <?php wp_head(); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -43,7 +43,7 @@
                     var modal_regret_wrapper = $('<div id="modal_regret_wrapper" class="content_wrapper" style="display:none;"></div>');
                     var content_image = $('<div class="age_gate_header"><img src="https://www.winemakersselection.com/wp-content/themes/wms-theme/assets/images/wms-reserve-logo.svg" title="Winemakers Selection" alt="Winemakers Selection" /></div>');
                     var content_buttons = $('<div role="tablist" aria-label="Age Gate"><span class="heading_1">Are you of legal drinking age?</span><div class="agree"><label for="agree" class="show-for-sr">I agree to the Terms of Service and Privacy Policy</label><input type="checkbox" id="agree" class="btn-default" required name="agree" role="tab" aria-selected="true" tabindex="1"></input> I agree to the <a data-fancybox data-type="iframe" data-src="terms-of-service.html" role="tab">Terms of Service</a> and <a data-fancybox data-type="iframe" data-src="privacy-policy.html" role="tab">Privacy Policy</a></div></div>');
-                    var content_text = $('<p>You must be at least 21 years old to view this site. By clicking "yes" you affirm that you are at least 21 years old. </p><nav><div class="btn_container"><button type="button" class="btn av_btn av_go" rel="yes" id="yes" role="tab" tabindex="2">Yes</button> <button type="button" class="btn av_btn av_no" rel="no" id="no" role="tab" tabindex="3">No</button></div></nav>');
+                    var content_text = $('<p>You must be at least 21 years old to view this site. By clicking "yes" you affirm that you are at least 21 years old. </p><nav><div class="btn_container"><button type="button" class="btn av_btn av_go" rel="yes" id="yes" role="tab" tabindex="2">Yes</button> <button type="button" class="btn av_btn av_no" rel="no" id="no" role="tab" tabindex="3">No</button></div></nav><p style="margin-top:20px;">You can learn more about how we use cookies by reviewing our <a data-fancybox data-type="iframe" data-src="privacy-policy.html">Privacy Policy</a>.</p>');
                     var content_footer = $('<footer class="footer"><p><small>&copy; <?php echo date('Y'); ?> Winemakers Selection Wines, Livermore, CA</small></p></footer>');
                     var regret_text = $('<h2 style="color: #000;margin: 200px auto;max-width: 50%;">You must be 21 years of age or older to view this site.</h2>');
                     modal_content_wrapper.append(content_image, content_buttons, content_text, content_footer);
