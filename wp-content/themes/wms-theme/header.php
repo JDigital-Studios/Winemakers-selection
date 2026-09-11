@@ -16,7 +16,7 @@
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
 	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <link rel="stylesheet" href="https://use.typekit.net/oxb5jsw.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fhg5slu.css">
 
 	<head>
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfc8sYrAAAAAG-TYNoe5xfsAlTX_mlzCRpqjJAx"></script>
