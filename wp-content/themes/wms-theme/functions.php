@@ -3,6 +3,7 @@ require_once(get_template_directory().'/functions/theme-support.php');
 require_once(get_template_directory().'/functions/cleanup.php'); 
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 require_once(get_template_directory().'/functions/menu.php'); 
+require_once(get_template_directory().'/functions/cookiebot-dnspi.php'); 
 //require_once(get_template_directory().'/functions/sidebar.php'); 
 //require_once(get_template_directory().'/functions/comments.php'); 
 require_once(get_template_directory().'/functions/page-navi.php'); 
