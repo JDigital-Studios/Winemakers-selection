@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d929cf55-5fbd-4e6e-8fd6-d0d72fd9f8de" data-blockingmode="auto"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-798SGJ79BJ"></script>
     <script>
@@ -14,14 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta class="foundation-mq">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
-	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	
+	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-icon-touch-icon" />	
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <link rel="stylesheet" href="https://use.typekit.net/fhg5slu.css">
+    <link rel="stylesheet" href="https://use.typekit.net/oxb5jsw.css">
 
-	<head>
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfc8sYrAAAAAG-TYNoe5xfsAlTX_mlzCRpqjJAx"></script>
-  <!-- Your code -->
-</head>
     <?php wp_head(); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <!-- <script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "OQBfWXhU5x");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript> -->
@@ -111,4 +108,4 @@
         <div class="off-canvas-content" data-off-canvas-content>
             <header class="header grid-container full" role="banner">
                 <?php get_template_part('parts/nav', 'offcanvas-topbar'); ?>
-            </header> 
+            </header>

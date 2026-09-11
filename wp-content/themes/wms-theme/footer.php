@@ -19,5 +19,6 @@
 		<?php wp_footer(); ?>
 
 		<script src="https://cdn.userway.org/widget.js" data-account="OQBfWXhU5x"></script>
+		<script id="CookieDeclaration" src="https://consent.cookiebot.com/d929cf55-5fbd-4e6e-8fd6-d0d72fd9f8de/cd.js" type="text/javascript" async></script>
 	</body>
 </html> <!-- end page -->

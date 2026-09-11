@@ -158,13 +158,27 @@ h6,
 	}
 }
 
-p, ul li, ol li {
+p, ul li, ol li, td {
 	font-family: "neutrabook";
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 34px;
 }
+
+table {
+	td, th {
+		padding: 10px;
+	}
+}
+
+.content-block {
+	p a, td a, li a {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+}
+
 a {
 	color: $black;
 	transition: all 0.2s ease-out;
