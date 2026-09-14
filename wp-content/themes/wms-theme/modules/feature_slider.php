@@ -4,6 +4,10 @@
             <?php $slideIndex = 0; ?>
             <?php if ( have_rows('slides') ) : ?>
                 <?php while( have_rows('slides') ) : the_row(); $slideIndex++; ?>
+                    <?php
+                        // Only the first slide should be an H1 to avoid duplicate H1s on the page.
+                        $heading_tag = ( 1 === $slideIndex ) ? 'h1' : 'h2';
+                    ?>
                     <?php if (get_sub_field('type') == 'image'): ?>
                         <div class="swiper-slide feature-content-container">
                             <div class="grid-x small-12 medium-12 large-12">
@@ -15,13 +19,13 @@
                                 </div>
                                 <div class="cell small-12 large-5 gradient_fill parallax">
                                     <div class="feature-content">
-                                    <?php 
+                                    <?php
                                         $image = get_sub_field('logo');
                                         if( !empty( $image ) ): ?>
                                         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" class="logo_image" />
                                     <?php endif; ?>
                                     <?php if (get_sub_field('heading')) : ?>
-                                        <h1 data-swiper-parallax-y="-20"  data-swiper-parallax-duration="600" data-swiper-parallax-opacity="1"><?php echo get_sub_field('heading'); ?></h1>
+                                        <<?php echo $heading_tag; ?> data-swiper-parallax-y="-20"  data-swiper-parallax-duration="600" data-swiper-parallax-opacity="1"><?php echo get_sub_field('heading'); ?></<?php echo $heading_tag; ?>>
                                     <?php endif; ?>
                                     <?php if (get_sub_field('copy')) : ?>
                                         <p data-swiper-parallax-y="-25" data-swiper-parallax-duration="750" data-swiper-parallax-opacity="1"><?php echo get_sub_field('copy'); ?></p>
@@ -29,18 +33,18 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>   
+                        </div>
                         <?php endif; ?>
                         <?php if (get_sub_field('type') == 'video'): ?>
                         <div class="swiper-slide">
                             <div class="feature-content-container">
-                                <div class="image_overlay">&nbsp;</div> 
-                                <video playsinline="1" muted="1" autoplay="1" loop="1" poster="<?php echo get_sub_field('video_image'); ?>" class="feature-video"> 
+                                <div class="image_overlay">&nbsp;</div>
+                                <video playsinline="1" muted="1" autoplay="1" loop="1" poster="<?php echo get_sub_field('video_image'); ?>" class="feature-video">
                                     <source src="<?php echo get_sub_field('video_link'); ?>" type="video/mp4">
                                 </video>
                                 <div class="feature-content">
                                 <?php if (get_sub_field('video_heading')) : ?>
-                                    <h1 data-swiper-parallax-y="-20"  data-swiper-parallax-duration="600" data-swiper-parallax-opacity="1"><?php echo get_sub_field('video_heading'); ?></h1>
+                                    <<?php echo $heading_tag; ?> data-swiper-parallax-y="-20"  data-swiper-parallax-duration="600" data-swiper-parallax-opacity="1"><?php echo get_sub_field('video_heading'); ?></<?php echo $heading_tag; ?>>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('video_copy') != '') : ?>
                                     <p data-swiper-parallax-y="-25" data-swiper-parallax-duration="750" data-swiper-parallax-opacity="1"><?php echo get_sub_field('video_copy'); ?></p>
@@ -48,7 +52,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php endif; ?>      
+                        <?php endif; ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
