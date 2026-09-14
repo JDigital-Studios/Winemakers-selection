@@ -5,7 +5,7 @@
  * - Injects the Do Not Sell link immediately after Privacy Policy in the
  *   footer-links menu, regardless of what is stored in the DB.
  * - Wires the link (and legacy #dnspi links) to Cookiebot.renew() with a
- *   best-effort switch to the Details tab.
+ *   robust switch to the Details tab.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -84,13 +84,48 @@ function wms_footer_links_insert_dnspi( $sorted_menu_items, $args ) {
 add_filter( 'wp_nav_menu_objects', 'wms_footer_links_insert_dnspi', 20, 2 );
 
 /**
- * Enqueue a small inline script that opens Cookiebot and tries to land on the
- * Details tab when the Do Not Sell link is clicked.
+ * Enqueue a small inline script that opens Cookiebot and lands on the Details
+ * tab when the Do Not Sell link is clicked.
  */
 function wms_cookiebot_dnspi_inline_script() {
 	$js = <<<'JS'
 /* Cookiebot Do Not Sell Or Share My Personal Information handler */
 (function() {
+  function wmsDispatchPointerClick(el) {
+    if (!el) return false;
+    var opts = { bubbles: true, cancelable: true, view: window };
+    var rect = el.getBoundingClientRect();
+    var clientX = rect.left + rect.width / 2;
+    var clientY = rect.top + rect.height / 2;
+    var pointerOpts = {
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      pointerId: 1,
+      isPrimary: true,
+      clientX: clientX,
+      clientY: clientY
+    };
+    el.dispatchEvent(new PointerEvent('pointerdown', pointerOpts));
+    el.dispatchEvent(new MouseEvent('mousedown', opts));
+    el.dispatchEvent(new PointerEvent('pointerup', pointerOpts));
+    el.dispatchEvent(new MouseEvent('mouseup', opts));
+    el.dispatchEvent(new MouseEvent('click', opts));
+    return true;
+  }
+
+  function wmsIsDetailsActive() {
+    var nav = document.getElementById('CybotCookiebotDialogNavDetails');
+    var pane = document.getElementById('CybotCookiebotDialogTabContentDetails');
+    if (!nav || !pane) {
+      return false;
+    }
+    var navActive = nav.classList.contains('CybotCookiebotDialogActive') ||
+                    nav.getAttribute('aria-selected') === 'true';
+    var paneVisible = window.getComputedStyle(pane).display !== 'none';
+    return navActive && paneVisible;
+  }
+
   function wmsOpenCookiebotDetails() {
     if (typeof Cookiebot === 'undefined' || typeof Cookiebot.renew !== 'function') {
       window.alert('Cookiebot consent manager is loading. Please try again in a moment.');
@@ -111,27 +146,29 @@ function wms_cookiebot_dnspi_inline_script() {
         return;
       }
 
-      var detailsBtn = dialog.querySelector(
-        'button.CybotCookiebotDialogNavItemDetails, ' +
-        'a.CybotCookiebotDialogNavItemDetails, ' +
-        '#CybotCookiebotDialogTabDetails, ' +
-        '[aria-controls="CybotCookiebotDialogBodyDetails"]'
-      );
+      if (wmsIsDetailsActive()) {
+        clearInterval(interval);
+        return;
+      }
 
-      if (!detailsBtn) {
+      var detailsBtn = document.getElementById('CybotCookiebotDialogNavDetails');
+
+      if (!detailsBtn || window.getComputedStyle(detailsBtn).display === 'none' || window.getComputedStyle(detailsBtn).visibility === 'hidden') {
         var buttons = dialog.querySelectorAll('button, a');
         for (var i = 0; i < buttons.length; i++) {
           var text = (buttons[i].textContent || buttons[i].innerText || '').trim();
           if (/Details/i.test(text)) {
-            detailsBtn = buttons[i];
-            break;
+            var style = window.getComputedStyle(buttons[i]);
+            if (style.display !== 'none' && style.visibility !== 'hidden') {
+              detailsBtn = buttons[i];
+              break;
+            }
           }
         }
       }
 
       if (detailsBtn) {
-        detailsBtn.click();
-        clearInterval(interval);
+        wmsDispatchPointerClick(detailsBtn);
       }
 
       attempts++;
@@ -159,7 +196,7 @@ function wms_cookiebot_dnspi_inline_script() {
 })();
 JS;
 
-	wp_register_script( 'wms-dnspi', '', array(), '4.0', true );
+	wp_register_script( 'wms-dnspi', '', array(), '5.0', true );
 	wp_enqueue_script( 'wms-dnspi' );
 	wp_add_inline_script( 'wms-dnspi', $js );
 }
