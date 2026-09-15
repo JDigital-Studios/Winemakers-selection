@@ -206,6 +206,21 @@ a {
 	#legal-page {
 		padding-top: 140px;
 	}
+	// The twg-legal plugin renders a <span class="legal-table-cell-label">
+	// inside every <td> as a mobile label (visible when the table is
+	// collapsed on small screens). The plugin's stylesheet hides it on
+	// desktop, but its CSS only sets color at the mobile breakpoint,
+	// leaving the label visible (and duplicating the column heading)
+	// on tablet and desktop. Hide it here on viewports >=768px and
+	// restore it on mobile to match the plugin's intended behavior.
+	.legal-table-cell-label {
+		display: none;
+	}
+	@media screen and (max-width: 767px) {
+		.legal-table-cell-label {
+			display: inline;
+		}
+	}
 }
 .grid-container {
 	max-width: 100%;
